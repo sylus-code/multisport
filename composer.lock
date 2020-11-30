@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b242d65e53e5b14daf0da2c7676979ec",
+    "content-hash": "17904f3a6e81302f1f6d802e9ce72f5b",
     "packages": [
         {
             "name": "composer/package-versions-deprecated",
@@ -1594,6 +1594,68 @@
                 "psr-3"
             ],
             "time": "2020-03-23T09:12:05+00:00"
+        },
+        {
+            "name": "sylus-code/multisport-endomondo-wrapper",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sylus-code/multisport-endomondo-wrapper.git",
+                "reference": "cec133e6cca651aceb0779d63861913fb825b775"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sylus-code/multisport-endomondo-wrapper/zipball/cec133e6cca651aceb0779d63861913fb825b775",
+                "reference": "cec133e6cca651aceb0779d63861913fb825b775",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "SylusCode\\MultiSport\\EndomondoWrapper\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "endomondo api wrapper",
+            "support": {
+                "issues": "https://github.com/sylus-code/multisport-endomondo-wrapper/issues",
+                "source": "https://github.com/sylus-code/multisport-endomondo-wrapper/tree/1.0.1"
+            },
+            "time": "2020-11-24T19:28:11+00:00"
+        },
+        {
+            "name": "sylus-code/multisport-workout",
+            "version": "1.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sylus-code/multisport-workout.git",
+                "reference": "0e9f371dbff824aa786c06b71063332d13491f32"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sylus-code/multisport-workout/zipball/0e9f371dbff824aa786c06b71063332d13491f32",
+                "reference": "0e9f371dbff824aa786c06b71063332d13491f32",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "SylusCode\\MultiSport\\Workout\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "workout class and types",
+            "support": {
+                "issues": "https://github.com/sylus-code/multisport-workout/issues",
+                "source": "https://github.com/sylus-code/multisport-workout/tree/1.0.5"
+            },
+            "time": "2020-11-20T16:32:52+00:00"
         },
         {
             "name": "symfony/cache",

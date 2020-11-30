@@ -131,14 +131,14 @@ class Workout
         return $this;
     }
 
-    public function getDuration(): ?int
+    public function getDurationTotal(): ?int
     {
-        return $this->duration;
+        return $this->durationTotal;
     }
 
-    public function setDuration(int $duration): self
+    public function setDurationTotal(int $durationTotal): self
     {
-        $this->duration = $duration;
+        $this->durationTotal = $durationTotal;
 
         return $this;
     }

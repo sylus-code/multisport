@@ -13,7 +13,7 @@ class TypeRepository extends ServiceEntityRepository
         parent::__construct($registry, Type::class);
     }
 
-    public function findOneBy(array $criteria, array $orderBy = null): Type
+    public function findOneBy(array $criteria, array $orderBy = null): ?Type
     {
         return parent::findOneBy($criteria, $orderBy);
     }

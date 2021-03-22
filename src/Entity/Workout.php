@@ -20,7 +20,7 @@ class Workout
     private $id;
 
     /**
-     * @ORM\OneToOne(targetEntity=Type::class, cascade={"persist", "remove"})
+     * @ORM\ManyToOne(targetEntity=Type::class, cascade={"persist", "remove"})
      * @ORM\JoinColumn(nullable=false)
      */
     private $type;
@@ -31,7 +31,7 @@ class Workout
     private $distance;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="integer", nullable=true)
      */
     private $calories;
 
@@ -46,7 +46,7 @@ class Workout
     private $points;
 
     /**
-     * @ORM\Column(type="date")
+     * @ORM\Column(type="datetime")
      */
     private $start;
 
@@ -61,7 +61,7 @@ class Workout
     private $maxHeartRate;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="string", length=1000, nullable=true)
      */
     private $message;
 
@@ -85,9 +85,20 @@ class Workout
      */
     private $steps;
 
+    /**
+     * @ORM\ManyToMany(targetEntity=Tag::class, mappedBy="workouts")
+     */
+    private $tags;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $userId;
+
     public function __construct()
     {
         $this->points = new ArrayCollection();
+        $this->tags = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -265,6 +276,45 @@ class Workout
     public function setSteps(?int $steps): self
     {
         $this->steps = $steps;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Tag[]
+     */
+    public function getTags(): Collection
+    {
+        return $this->tags;
+    }
+
+    public function addTag(Tag $tag): self
+    {
+        if (!$this->tags->contains($tag)) {
+            $this->tags[] = $tag;
+            $tag->addWorkout($this);
+        }
+
+        return $this;
+    }
+
+    public function removeTag(Tag $tag): self
+    {
+        if ($this->tags->removeElement($tag)) {
+            $tag->removeWorkout($this);
+        }
+
+        return $this;
+    }
+
+    public function getUserId(): ?int
+    {
+        return $this->userId;
+    }
+
+    public function setUserId(int $userId): self
+    {
+        $this->userId = $userId;
 
         return $this;
     }

@@ -25,7 +25,7 @@ class Point
     /**
      * @ORM\Column(type="float", nullable=true)
      */
-    private $longtitude;
+    private $longitude;
 
     /**
      * @ORM\Column(type="float", nullable=true)
@@ -48,7 +48,7 @@ class Point
     private $speed;
 
     /**
-     * @ORM\Column(type="date")
+     * @ORM\Column(type="datetime", nullable=true)
      */
     private $time;
 
@@ -75,14 +75,14 @@ class Point
         return $this;
     }
 
-    public function getLongtitude(): ?float
+    public function getLongitude(): ?float
     {
-        return $this->longtitude;
+        return $this->longitude;
     }
 
-    public function setLongtitude(?float $longtitude): self
+    public function setLongitude(?float $longitude): self
     {
-        $this->longtitude = $longtitude;
+        $this->longitude = $longitude;
 
         return $this;
     }

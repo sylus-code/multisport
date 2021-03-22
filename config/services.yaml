@@ -29,3 +29,20 @@ services:
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+
+    App\Command\ImportWorkoutCommand:
+        arguments:
+            $pathToZip: '%env(resolve:PATH_TO_ZIP)%'
+            $pathToExtract: '%env(resolve:PATH_TO_EXTRACT)%'
+
+    Symfony\Component\Finder\Finder:
+        class: Symfony\Component\Finder\Finder
+
+    SylusCode\MultiSport\EndomondoWrapper\WorkoutTypeResolverInterface:
+        class: SylusCode\MultiSport\EndomondoWrapper\WorkoutTypeResolver
+
+    SylusCode\MultiSport\EndomondoWrapper\WorkoutParser:
+        class: SylusCode\MultiSport\EndomondoWrapper\WorkoutParser
+
+    SylusCode\MultiSport\EndomondoWrapper\WorkoutImporter:
+        class: SylusCode\MultiSport\EndomondoWrapper\WorkoutImporter
